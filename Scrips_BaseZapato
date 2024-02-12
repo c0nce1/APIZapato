@@ -1,0 +1,36 @@
+Create database bdSuperZapato
+
+USE bdSuperZapato
+
+CREATE TABLE categoria(
+Idcategoria int primary key identity(1,1),
+Descripcion varchar(50)
+)
+
+
+select * from categoria
+
+
+create table Producto(
+Idproducto int primary key identity(1,1),
+CodifoBarra varchar(20),
+Descripcion varchar(50),
+Marca varchar(50),
+IdCategoria int,
+Precio decimal(10,2),
+constraint FK_IDCATEGORIA FOREIGN KEY (IdCategoria) references categoria(Idcategoria ))
+
+select * from  Producto
+
+
+insert into categoria(Descripcion) values
+('Tecnologia'),
+('ElectroHogar'),
+('Accesorios')
+
+
+----------------
+
+insert into Producto(CodifoBarra,Descripcion,Marca,IdCategoria,Precio ) values
+('50910010','Monitor Aoc - Curvo','AOC',1,1200),
+('50910012','Lavadora','WINIA',2,1700)
